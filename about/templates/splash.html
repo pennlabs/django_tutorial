@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <h1>Welcome! My name is Mongo DB.</h1>
+            <p>I like building things.</p>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h1 class="card-title">{{project.name}}</h1>
+                        <p class="card-text">{{project.description}}</p>
+                        <a href="{{project.link}}" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}      
+    </div>
+</div>
+{% endblock %}
